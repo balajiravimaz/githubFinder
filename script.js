@@ -18,6 +18,8 @@ async function getRepos(url,name){
     const res = await fetch(url + name + "/repos");
     const data = await res.json();
     addRepos(data);    
+    console.log(data);
+    
 }
 
 function generateCard(data) {
@@ -34,7 +36,8 @@ function generateCard(data) {
         <span>${data.followers} followers</span>
         <span>${data.following} following</span>
         <span>${data.public_repos} repos</span>
-        </div>
+        <br>        
+        </div>        
         <h4 class="mt-1">Repos: </h4>
         <div class="flex" id="repo">
         </div>            
